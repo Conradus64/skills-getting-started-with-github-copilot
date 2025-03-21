@@ -5,6 +5,19 @@
   font-family: Arial, sans-serif;
 }
 
+.activity-card .participants ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  padding-left: 0;
+}
+
+.activity-card .participants ul li::before {
+  content: "✔ ";
+  color: #2e7d32;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
