@@ -19,7 +19,18 @@ document.addEventListener("DOMContentLoaded", () => {
         activityCard.className = "activity-card";
 
         const spotsLeft = details.max_participants - details.participants.length;
+        if (details.participants.length > 0) {
+          const participantsList = document.createElement("ul");
+          participantsList.className = "participants-list";
 
+          details.participants.forEach((participant) => {
+            const participantItem = document.createElement("li");
+            participantItem.textContent = participant;
+            participantsList.appendChild(participantItem);
+          });
+
+          activityCard.appendChild(participantsList);
+        }
         activityCard.innerHTML = `
           <h4>${name}</h4>
           <p>${details.description}</p>
